@@ -23,7 +23,7 @@ Cada uno de los modelos tambien tiene su respectivo controlador, el cual posee l
 
 **Diagrama de clases**
 
-![diagrama de clases] (https://github.com/AlexDeimon/E_commerce_Backend/blob/main/diagrama%20clases%20GZ2.png)
+![diagrama de clases] (https://github.com/AlexDeimon/E_commerce_Backend/blob/main/diagrama-clases.jpg)
 
 Como se puede ver, la única entidad independiente son los productos. 
 
@@ -74,7 +74,7 @@ En esta petición de tipo PUT se tienen parámetros de los 2 tipos @PathVariable
     }
 ```
 
-[!prueba en postman] (https://github.com/AlexDeimon/E_commerce_Backend/blob/main/prueba%20postman.png)
+[!prueba en postman] (https://github.com/AlexDeimon/E_commerce_Backend/blob/main/prueba-postman.jpg)
 ## Pruebas ✅
 
 Para ejecutar el proyecto se usa el siguiente comando
