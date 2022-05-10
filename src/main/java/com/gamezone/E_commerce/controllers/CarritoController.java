@@ -25,6 +25,7 @@ public class CarritoController {
         this.productoRepository = productoRepository;
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/crearCarrito/{id}")
     Carrito newCarrito(@PathVariable String id) throws ParseException{
         if(!productos.isEmpty()){
@@ -34,6 +35,7 @@ public class CarritoController {
         return carritoRepository.save(carrito);
     }
 
+    @CrossOrigin(origins = "*")
     @PutMapping("/añadirProducto/{id}/{producto}/{cantidad}")
     Carrito newProducto(@PathVariable String id, @PathVariable String producto, @PathVariable int cantidad) throws ParseException{
         if(!productos.isEmpty()){
@@ -80,6 +82,7 @@ public class CarritoController {
         return carritoRepository.save(carrito);
     }
 
+    @CrossOrigin(origins = "*")
     @PutMapping("/borrarProducto/{id}/{producto}")
     Carrito deleteProducto(@PathVariable String id, @PathVariable String producto) throws ParseException{
         if(!productos.isEmpty()){
@@ -114,6 +117,7 @@ public class CarritoController {
         return carritoRepository.save(carrito);
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/verCarrito/{id}")
     Carrito getCarrito(@PathVariable String id) throws ParseException{
         Carrito getcarrito = carritoRepository.findById(id).orElse(null);
@@ -123,12 +127,14 @@ public class CarritoController {
         return getcarrito;
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/verCarritos")
     List<Carrito> getCarritos() throws ParseException{
         List<Carrito> carritoList = carritoRepository.findAll();
         return carritoList;
     }
 
+    @CrossOrigin(origins = "*")
     @DeleteMapping("/eliminarCarrito/{id}")
     String deleteCarrito(@PathVariable String id) throws ParseException{
         Carrito deletecarrito = carritoRepository.findById(id).orElse(null);

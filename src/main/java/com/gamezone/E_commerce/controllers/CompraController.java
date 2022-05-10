@@ -23,6 +23,7 @@ public class CompraController {
         this.clienteRepository = clienteRepository;
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/agregarCompra/{idCompra}/{idCliente}")
     Compra newCompra(@PathVariable String idCompra, @PathVariable String idCliente) throws ParseException{
         Compra newCompr = compraRepository.findById(idCompra).orElse(null);
@@ -42,12 +43,14 @@ public class CompraController {
         return compraRepository.save(compra);
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/verCompras")
     List<Compra> getCompras() throws ParseException{
         List<Compra> ListCompras = compraRepository.findAll();
         return ListCompras;
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/verComprasXFecha/{fecha}")
     List<Compra> getComprasFecha(@PathVariable String fecha) throws ParseException{
         Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
@@ -58,6 +61,7 @@ public class CompraController {
         return comprasList;
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("verCompraXCliente/{idCliente}")
     Compra getCompraCliente(@PathVariable String idCliente) throws ParseException{
         Cliente client = clienteRepository.findById(idCliente).orElse(null);
@@ -78,6 +82,7 @@ public class CompraController {
         return getCompra;
     }
 
+    @CrossOrigin(origins = "*")
     @DeleteMapping("/borrarCompra/{id}")
     String deleteCompra(@PathVariable String id) throws ParseException{
         Compra deleteCompr = compraRepository.findById(id).orElse(null);

@@ -20,6 +20,7 @@ public class ProductoController {
         this.productoRepository = productoRepository;
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/agregarProducto")
     Producto newProducto(@RequestBody Producto producto) throws ParseException{
         List<Producto> newProducto = productoRepository.findAll();
@@ -35,12 +36,14 @@ public class ProductoController {
         return productoRepository.save(producto);
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/verProductos")
     List <Producto> getProductList(){
         List<Producto> ProductList = productoRepository.findAll();
         return ProductList;
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("verProducto/{producto}")
     Producto getProducto(@PathVariable String producto) throws ParseException{
         List<Producto> ProductList = productoRepository.findAll();
@@ -57,6 +60,7 @@ public class ProductoController {
         return getproducto;
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("verProductos/{categoria}")
     List<Producto> getProductoByCategoria(@PathVariable String categoria) throws ParseException{
         List<Producto> productoList = productoRepository.findAll();
@@ -72,6 +76,7 @@ public class ProductoController {
         return productsCategory;
     }
 
+    @CrossOrigin(origins = "*")
     @PutMapping("actualizarProducto/{id}")
     Producto putProducto(@PathVariable String id, @RequestBody Producto productoupdate) throws ParseException{
         Producto updateProducto = productoRepository.findById(id).orElse(null);
@@ -86,10 +91,12 @@ public class ProductoController {
         updateProducto.setPrecio(productoupdate.getPrecio());
         updateProducto.setStock(productoupdate.getStock());
         updateProducto.setCategoria(productoupdate.getCategoria());
+        updateProducto.setCantidadCarrito(0);
 
         return productoRepository.save(updateProducto);
     }
 
+    @CrossOrigin(origins = "*")
     @DeleteMapping("eliminarProducto/{producto}")
     String deleteProduto(@PathVariable String producto) throws ParseException{
         List<Producto> ProductList = productoRepository.findAll();

@@ -21,6 +21,7 @@ public class ClienteController {
         this.carritoRepository = carritoRepository;
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/nuevoCliente/{idCliente}/{idCarrito}")
     Cliente newCliente(@PathVariable String idCliente, @PathVariable String idCarrito, @RequestBody Cliente cliente) throws ParseException{
         Cliente newclient = clienteRepository.findById(idCliente).orElse(null);
@@ -37,12 +38,14 @@ public class ClienteController {
         return clienteRepository.save(cliente);
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/verClientes")
     List<Cliente> getClientes() throws ParseException{
         List<Cliente> ClientList = clienteRepository.findAll();
         return ClientList;
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("verCliente/{idcliente}")
     Cliente getCliente(@PathVariable String idcliente) throws ParseException {
         Cliente getclient = clienteRepository.findById(idcliente).orElse(null);
@@ -52,6 +55,7 @@ public class ClienteController {
         return getclient;
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("verClienteXCarrito/{idcarrito}")
     Cliente getClienteXCarrito(@PathVariable String idcarrito) throws ParseException{
         Carrito carrito = carritoRepository.findById(idcarrito).orElse(null);
@@ -72,6 +76,7 @@ public class ClienteController {
         return getcliente;
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("verCarritoXCliente/{id}")
     Carrito getCarritoXCliente(@PathVariable String id) throws ParseException{
         Cliente getclient = clienteRepository.findById(id).orElse(null);
@@ -85,6 +90,7 @@ public class ClienteController {
         return getcarrito;
     }
 
+    @CrossOrigin(origins = "*")
     @PutMapping("/actualizarCliente/{id}")
     Cliente putCliente(@PathVariable String id, @RequestBody Cliente cliente) throws ParseException{
         Cliente putclient = clienteRepository.findById(id).orElse(null);
@@ -100,6 +106,7 @@ public class ClienteController {
         return clienteRepository.save(putclient);
     }
 
+    @CrossOrigin(origins = "*")
     @DeleteMapping("/eliminarCliente/{id}")
     String deleteCliente(@PathVariable String id) throws ParseException{
         Cliente deletecliente = clienteRepository.findById(id).orElse(null);
