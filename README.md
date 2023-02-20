@@ -89,7 +89,7 @@ Unos segundos despues, mediante la ruta http://localhost:8080/ se pueden realiza
 
 ## API-REST desplegada 📦
 
-El despliegue de la API se realizó en Heroku y se puede acceder a esta mediante la URL https://gamezone-e-commerce-backend.herokuapp.com/ 
+El despliegue de la API se realizó en Railway y se puede acceder a esta mediante la URL https://ecommercebackend-production-2c76.up.railway.app/ 
 
 Con esa URL se pueden realizar tambien pruebas a las peticiones de las 4 entidades.
 
@@ -100,4 +100,4 @@ Con esa URL se pueden realizar tambien pruebas a las peticiones de las 4 entidad
 - Maven - Herramienta para simplificar procesos de compilación y ejecución.
 - Postman - Herramienta para realizar las pruebas de la API-REST.
 - Docker - Herramienta para crear contenedor del proyecto haciendo más facil su despliegue y ejecución. 
-- Heroku - Plataforma como servicio (PaaS) utilizada para desplegar la API-REST en la nube. 
+- Railway - Plataforma utilizada para desplegar la API-REST en la nube. 
